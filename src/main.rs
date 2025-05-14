@@ -3,7 +3,6 @@ use dioxus::prelude::*;
 use views::{Home, Competitions, Sponsors, SponsorUs, Contact, About, Nav, Footer};
 
 mod views;
-mod util;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -25,7 +24,6 @@ enum Route {
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const CSS: Asset = asset!("/assets/styles/main.css");
-const FONT_AWESOME_CSS: Asset = asset!("/assets/styles/brands.css");
 
 fn main() {
     launch(App);
@@ -34,11 +32,12 @@ fn main() {
 #[component]
 fn App() -> Element {
     let show_menu = use_context_provider(|| Signal::new(false));
-    
+
     rsx! {
         document::Link { rel: "icon", href: FAVICON }
         document::Stylesheet { href: CSS }
 
+        // Font Awesome stuff
         head {
             link {
                 rel: "stylesheet",
@@ -48,7 +47,7 @@ fn App() -> Element {
                 referrerpolicy: "noreferrer"
             }
         }
-        
-        Router::<Route> {}    
+
+        Router::<Route> {}
     }
 }

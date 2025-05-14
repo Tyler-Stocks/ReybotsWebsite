@@ -8,7 +8,8 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
-web-sys = { version = "0.3.77", features = ["Screen"] }
+dioxus-resize-observer = "0.3.0"
+dioxus-use-mounted = "0.3.1"
 
 
 [features]

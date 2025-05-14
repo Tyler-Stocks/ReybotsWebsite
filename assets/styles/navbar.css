@@ -11,7 +11,7 @@ nav {
   overflow: hidden;
   z-index: 5;
   padding-top: 25px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .LogoContainer {
@@ -22,45 +22,18 @@ nav {
 
   p {
     font-family: 'Montserrat', serif;
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 600;
     color: #292929;
   }
 }
 
-/* For Desktop Navbar */
-
-.ButtonContainer {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 40px;
-  border-radius: 1000px;
-  transition: background 0.5s, color 0.5s;
-  cursor: pointer;
-
-  p {
-    font-weight: 500;
-    font-size: 16px;
-    font-family: 'Montserrat', serif;
-    color: #292929;
-    transition: color 0.5s;   
-    
-    &:hover {
-      color: #FFF
+@media screen and (min-width: 2000px) {
+  .LogoContainer {
+    p {
+      font-size: 33px;
     }
   }
-  
-  &:hover {
-    background: #292929;
-  }
-}
-
-.ButtonsContainer {
-  display: flex;
-  border-radius: 1000px;
-  background: #F7F7F7;
-  height: 52px;
 }
 
 .NavHamburger {
@@ -145,18 +118,62 @@ nav {
 
 .TopMenu {
   top: 0;
-  width: 75vw;
-  height: 60px;
+  width: 60vw;
+  height: 80px;
   background: #292929;
   transition: right 1s cubic-bezier(.42,0,0,1.01);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 5px 0 0 5px;
+  border-radius: 7px 0 0 7px;
 
   p {
-    font-size: 20px;
+    font-size: 22px;
     font-family: Montserrat, sans-serif;
     color: #FFF;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .TopMenu {
+    gap: 20px;
+    p {
+      font-size: 27px;
+    }
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .TopMenu {
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 1700px) {
+  .TopMenu {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .TopMenu {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .TopMenu {
+    width: 75vw;
+  }
+}
+
+.TopMenuElement {
+
+  p {
+    color: #FFF;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

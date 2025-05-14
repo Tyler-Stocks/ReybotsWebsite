@@ -14,7 +14,7 @@ pub fn SponsorUs() -> Element {
     main {
       class: "SponsorUs",
       h1 { "Sponsor Us" }
-      p { "PLS GIVE US MONEY" } 
+      p { "PLS GIVE US MONEY" }
       div {
         class: "SponsorLink",
         a {

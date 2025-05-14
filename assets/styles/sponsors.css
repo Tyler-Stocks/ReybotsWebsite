@@ -3,15 +3,34 @@
     display: flex;
     flex-flow: column;
     margin-top: 200px;
-    align-items: center;
     text-align: center;
     padding: 0 15px;
 }
 
 .SponsorsHeader {
     display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    img {
+        margin-top: 50px;
+        width: 45vw;
+        border-radius: 15px;
+    }
+
+    figcaption {
+        margin-top: 20px;
+        font-size: 28px;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+.ThankYouContainer {
+    display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: start;
+    margin-left: 20px;
+    margin-right: 400px;
 
     h1 {
         font-weight: 700;
@@ -28,28 +47,67 @@
         line-height: 35px;
         color: #9d9d9d;
         max-width: 543px;
+        text-align: left;
     }
+}
 
-    div {
-        display: flex;
-        align-items: center;
+.EngineerSection {
+    display: flex;
+    flex-flow: column;
+    margin-top: 100px;
+    align-items: center;
+
+    h1 {
+        font-weight: 700;
+        font-size: 90px;
+        color: #292929;
     }
-
-    button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 50px;
-        width: 167px;
-        height: 61px;
-        background: #292929;
-        border-radius: 10px;
-        outline: 0;
-        border: 0;
-        color: #fff;
+    p {
+        margin-top: 20px;
         font-weight: 400;
-        font-size: 20px;
-        transition: background .5s;
-        cursor: pointer;
+        font-size: 25px;
+        line-height: 35px;
+        color: #9d9d9d;
+    }
+}
+
+.EngineerSponsors {
+    display: flex;
+    flex-flow: column;
+    gap: 7vh;
+}
+
+.EngineerSponsor {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin-top: 30px;
+    gap: 15vw;
+
+    img {
+        width: 20vw;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 65px;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 85px;
+        color: #292929;
+        max-width: 880px;
+    }
+}
+
+.EngineerSponsorLeft {
+    text-align: left;
+}
+
+.EngineerSponsorRight {
+    text-align: right;
+}
+
+.EngineerSponsorDescription {
+    p {
+        max-width: 900px;
     }
 }

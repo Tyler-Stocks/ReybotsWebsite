@@ -1,28 +1,16 @@
 use crate::Route;
 use dioxus::prelude::*;
+use dioxus_resize_observer::use_size;
+use dioxus_use_mounted::use_mounted;
 
-use crate::util::document::screen_width;
 
 const NAVBAR_CSS: Asset = asset!("/assets/styles/navbar.css");
 const REYBOTS_LOGO: Asset = asset!("assets/images/reybots_logo.svg");
 
 #[component]
-fn NavBarButton(destination: Route, label: &'static str) -> Element {
-  rsx! {
-    Link {
-      to: destination,
-      div {
-        class: "ButtonContainer",
-        p { "{label}" }
-      }
-    }
-  }
-}
-
-#[component]
 fn SideMenuElement(destination: Route, label: &'static str) -> Element {
     let mut show_side_menu = use_context::<Signal<bool>>();
-    
+
     rsx! {
         Link {
             onclick: move |_| show_side_menu.set(false),
@@ -30,43 +18,6 @@ fn SideMenuElement(destination: Route, label: &'static str) -> Element {
             p { class: "SideMenuElement", "{label}" }
         }
     }
-}
-
-/// Navbar component to be shown when the screen width > 1200 px
-#[component]
-fn NavBar() -> Element {
-    rsx! {
-        div {
-            class: "ButtonsContainer",
-            NavBarButton {
-                destination: Route::Home {},
-                label: "Home"
-            }
-            NavBarButton {
-                destination: Route::Sponsors {},
-                label: "Sponsors"
-            }
-            NavBarButton {
-                destination: Route::SponsorUs {},
-                label: "Sponsor Us"
-            }
-            NavBarButton {
-                destination: Route::Competitions { },
-                label: "Competitions"
-            }
-            NavBarButton {
-                destination: Route::About { },
-                label: "About"
-            }
-        }
-        div {
-            class: "ButtonsContainer",
-            NavBarButton {
-                destination: Route::Contact {},
-                label: "Contact"
-            }
-        }
-   }
 }
 
 #[component]
@@ -77,7 +28,7 @@ fn NavHamburger() -> Element {
         let show_menu_value = *show_menu.read();
         show_menu.set(!show_menu_value);
     };
-    
+
     rsx! {
         svg {
             onclick: toggle_menu,
@@ -94,60 +45,17 @@ fn NavHamburger() -> Element {
 }
 
 #[component]
-fn TopMenuElement(destination: Route, label: &'static str) -> Element {
-    let mut show_menu = use_context::<Signal<bool>>();
-    
-    rsx! {
-        Link {
-            onclick: move |_| show_menu.set(false),
-            to: destination,
-            p { class: "TopMenuElement", "{label}" }
-        } 
-    } 
-}
-
-#[component]
-pub fn NavTopMenu() -> Element {
-    rsx! {
-        div {
-            class: "TopMenu",
-            
-            TopMenuElement {
-                destination: Route::About {},
-                label: "About"
-            },
-            TopMenuElement { 
-                destination: Route::Sponsors {},
-                label: "Sponsors"
-            }
-            TopMenuElement {
-                destination: Route::SponsorUs {},
-                label: "SponsorUs" 
-            }
-            TopMenuElement {
-                destination: Route::Competitions {},
-                label: "Competitions"
-            }
-            TopMenuElement {
-                destination: Route::Contact {},
-                label: "Contact"
-            }
-        }
-    }
-}
-
-#[component]
 pub fn NavSideMenu() -> Element {
     let show_menu = use_context::<Signal<bool>>();
-    
+
     rsx! {
-        NavHamburger {} 
+        NavHamburger {}
         div {
             class: if *show_menu.read() { "SideMenu SideMenuOpen" } else { "SideMenu SideMenuClosed" },
                 SideMenuElement {
                     destination: Route::About {},
                     label: "About"
-                } 
+                }
                 SideMenuElement {
                     destination: Route::Sponsors {},
                     label: "Sponsors"
@@ -163,27 +71,85 @@ pub fn NavSideMenu() -> Element {
                 SideMenuElement {
                     destination: Route::Contact {},
                     label: "Contact"
-                } 
+                }
+        }
+    }
+}
+
+#[component]
+fn TopMenuElement(destination: Route, label: &'static str) -> Element {
+    let mut show_menu = use_context::<Signal<bool>>();
+
+    rsx! {
+        Link {
+            onclick: move |_| show_menu.set(false),
+            to: destination,
+            p { class: "TopMenuElement", "{label}" }
+        }
+    }
+}
+
+#[component]
+pub fn NavTopMenu() -> Element {
+    rsx! {
+        div {
+            class: "TopMenu",
+            TopMenuElement {
+                destination: Route::Home {},
+                label: "Home"
+            }
+            TopMenuElement {
+                destination: Route::Sponsors {},
+                label: "Sponsors"
+            }
+            TopMenuElement {
+                destination: Route::SponsorUs {},
+                label: "Sponsor Us"
+            }
+            TopMenuElement {
+                destination: Route::Competitions {},
+                label: "Competitions"
+            }
+            TopMenuElement {
+                destination: Route::About {},
+                label: "About"
+            }
+            TopMenuElement {
+                destination: Route::Contact {},
+                label: "Contact"
+            }
         }
     }
 }
 
 #[component]
 pub fn Nav() -> Element {
+    let mounted = use_mounted();
+    let size = use_size(mounted);
+
+
     rsx! {
         document::Stylesheet { href: NAVBAR_CSS }
 
         nav {
+            onmounted: move |event| mounted.onmounted(event),
             div {
                 class: "LogoContainer",
                 img { src: REYBOTS_LOGO }
-                p { "Reybots" }
+
+                p {
+                    match size.width() as u64 {
+                        0..1400    => "Reybots",
+                        1400..1510 => "Reynolds Reybots",
+                        1510..     => "Reynolds Reybots | #18840"
+                    }
+                }
+
             }
 
-            match screen_width() {
+            match size.width() as u64 {
                0..600 => rsx! { NavSideMenu {} },
-               600..1200 => rsx! { NavTopMenu {}  },
-               1200.. => rsx! { NavBar {} } 
+               600.. => rsx! { NavTopMenu {}  },
             }
         }
 
