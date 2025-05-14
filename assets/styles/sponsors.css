@@ -11,9 +11,13 @@
     display: flex;
     flex-flow: row;
     justify-content: center;
+    margin-bottom: 12vh;
+
+    figure {
+        margin-right: 5vw;
+    }
 
     img {
-        margin-top: 50px;
         width: 45vw;
         border-radius: 15px;
     }
@@ -29,8 +33,8 @@
     display: flex;
     flex-flow: column;
     align-items: start;
-    margin-left: 20px;
-    margin-right: 400px;
+    margin-left: 5vw;
+    margin-right: 19vw;
 
     h1 {
         font-weight: 700;
@@ -41,27 +45,27 @@
     }
 
     p {
-        margin-top: 30px;
+        margin-top: 2vw;
         font-weight: 400;
         font-size: 18px;
         line-height: 35px;
         color: #9d9d9d;
-        max-width: 543px;
+        max-width: 700px;
         text-align: left;
     }
 }
 
-.EngineerSection {
+.SponsorTier {
     display: flex;
     flex-flow: column;
-    margin-top: 100px;
     align-items: center;
 
-    h1 {
+    h2 {
         font-weight: 700;
         font-size: 90px;
         color: #292929;
     }
+
     p {
         margin-top: 20px;
         font-weight: 400;
@@ -71,7 +75,7 @@
     }
 }
 
-.EngineerSponsors {
+.SponsorTierElementContainer {
     display: flex;
     flex-flow: column;
     gap: 7vh;
@@ -81,14 +85,12 @@
     display: flex;
     flex-flow: row;
     align-items: center;
-    margin-top: 30px;
-    gap: 15vw;
+    gap: 8vw;
+    margin: 30px 3vw 10vh;
 
-    img {
-        width: 20vw;
-    }
+    img { width: 25vw; }
 
-    h2 {
+    h3 {
         font-weight: 700;
         font-size: 65px;
         font-family: 'Montserrat', sans-serif;
@@ -99,15 +101,60 @@
 }
 
 .EngineerSponsorLeft {
-    text-align: left;
+    text-align: right;
 }
 
 .EngineerSponsorRight {
-    text-align: right;
+    text-align: left;
 }
 
 .EngineerSponsorDescription {
     p {
         max-width: 900px;
+    }
+}
+
+.MechanicSponsor {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin-top: 30px;
+    gap: 15vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+
+    img { width: 20vw; }
+
+    h3 {
+        font-weight: 700;
+        font-size: 45px;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 85px;
+        color: #292929;
+        max-width: 880px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .ThankYouContainer {
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+    .SponsorsHeader {
+        figcaption {
+            font-size: 22px;
+        }
+    }
+
+    .SponsorTier {
+        h2 {
+            font-size: 75px;
+        }
+
+        p {
+            font-size: 22px;
+        }
     }
 }
