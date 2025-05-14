@@ -1,0 +1,55 @@
+.Sponsors {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    margin-top: 200px;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.SponsorsHeader {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    h1 {
+        font-weight: 700;
+        font-size: 75px;
+        line-height: 85px;
+        color: #292929;
+        max-width: 880px;
+    }
+
+    p {
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 35px;
+        color: #9d9d9d;
+        max-width: 543px;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        width: 167px;
+        height: 61px;
+        background: #292929;
+        border-radius: 10px;
+        outline: 0;
+        border: 0;
+        color: #fff;
+        font-weight: 400;
+        font-size: 20px;
+        transition: background .5s;
+        cursor: pointer;
+    }
+}

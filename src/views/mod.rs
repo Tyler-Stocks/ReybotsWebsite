@@ -11,8 +11,8 @@
 mod home;
 pub use home::Home;
 
-mod navbar;
-pub use navbar::NavBar;
+mod nav;
+pub use nav::Nav;
 
 mod competitions;
 pub use competitions::Competitions;
@@ -28,3 +28,7 @@ pub use contact::Contact;
 
 mod about;
 pub use about::About;
+
+mod footer;
+pub use footer::Footer;
+

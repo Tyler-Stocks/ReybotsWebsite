@@ -2,51 +2,58 @@
 
 nav {
   display: flex;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 138px;
   background: #FFF;
-  padding: 0px 41px;
-}
-
-.ButtonContainer {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0px 40px;
-  border-radius: 1000px;
-  transition: background 0.5s, color 0.5s;
-  cursor: pointer;
-}
-
-.ButtonContainer p {
-  font-weight: 500;
-  font-size: 16px;
-  font-family: 'Montserrat';
-  color: #292929;
-  transition: color 0.5s;
-}
-
-.ButtonContainer::hover {
-  background: #292929;
-}
-
-.ButtonContainer::hover p {
-  color: #FFF
+  position: fixed;
+  overflow: hidden;
+  z-index: 5;
+  padding-top: 25px;
+  padding-bottom: 10px;
 }
 
 .LogoContainer {
   display: flex;
   align-items: center;
   gap: 17px;
+  padding-left: 45px;
+
+  p {
+    font-family: 'Montserrat', serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #292929;
+  }
 }
 
-.LogoContainer p {
-  font-family: 'Montserrat';
-  font-size: 25px;
-  font-weight: 600;
-  color: #292929;
+/* For Desktop Navbar */
+
+.ButtonContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 40px;
+  border-radius: 1000px;
+  transition: background 0.5s, color 0.5s;
+  cursor: pointer;
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Montserrat', serif;
+    color: #292929;
+    transition: color 0.5s;   
+    
+    &:hover {
+      color: #FFF
+    }
+  }
+  
+  &:hover {
+    background: #292929;
+  }
 }
 
 .ButtonsContainer {
@@ -54,4 +61,102 @@ nav {
   border-radius: 1000px;
   background: #F7F7F7;
   height: 52px;
+}
+
+.NavHamburger {
+  z-index: 5;
+  cursor: pointer;
+
+  rect {
+    fill: #181818;
+
+    &:nth-child(1) {
+      transition: transform 1s, opacity 1s;
+    }
+    &:nth-child(2) {
+      transition: transform 1s, opacity 1s;
+      opacity: 1;
+    }
+    &:nth-child(3) {
+      transition: transform 1s, opacity 1s;
+    }
+  }
+}
+
+.NavHamburgerOpen {
+  z-index: 5;
+
+  rect {
+    fill: #FFF;
+
+    &:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+      transform-origin: center 0;
+    }
+    &:nth-child(2) {
+      transform: translateY(-10px) rotate(-45deg);
+      transform-origin: center 22px;
+    }
+    &:nth-child(3) {
+      opacity: 0;
+    }
+  }
+}
+
+/** For Side Menu < 600px */
+
+.SideMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35vw;
+  height: 100%;
+  background: #292929;
+  z-index: 2;
+  transition: right 1s cubic-bezier(.42,0,0,1.01);
+  padding: 170px 85px;
+  display: flex;
+  flex-flow: column;
+  gap: 55px;
+}
+
+.SideMenuClosed {
+  right: -55vw;
+}
+
+.SideMenuOpen {
+  right: 0;
+}
+
+.SideMenuElement {
+  font-weight: 500;
+  font-size: 35px;
+  color: rgb(209, 209, 209);
+  cursor: pointer;
+  transition: color 0.5s;
+  width: max-content;
+
+  &:hover {
+    color: #FFF;
+  }
+}
+
+/** For Top Menu 600 - 1200px */
+
+.TopMenu {
+  top: 0;
+  width: 75vw;
+  height: 60px;
+  background: #292929;
+  transition: right 1s cubic-bezier(.42,0,0,1.01);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px 0 0 5px;
+
+  p {
+    font-size: 20px;
+    font-family: Montserrat, sans-serif;
+    color: #FFF;
+  }
 }
