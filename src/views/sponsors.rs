@@ -81,14 +81,11 @@ fn EngineerSponsorRight(
 #[component]
 pub fn Sponsors() -> Element {
   let show_menu = use_context::<Signal<bool>>();
-  let mounted = use_mounted();
-  let size = use_size(mounted);
 
   rsx! {
     document::Stylesheet { href: CSS }
 
     main {
-      onmounted: move |event| mounted.onmounted(event),
       class: "Sponsors",
       style: if *show_menu.read() { "overflow: hidden" } else { "overflow: initial"},
       section {
@@ -96,28 +93,13 @@ pub fn Sponsors() -> Element {
         div {
           class: "ThankYouContainer",
           h1 { "Thank You" }
-          
-          match size.width() {
-            0.0..=1000.0 => {
-              rsx! { 
-                p {
-                  r#"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."#
-                } 
-              }
-            } 
-            1001.0.. => {
-              rsx! {
-                p {
-                  r#"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                  In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-                  "#
-                } 
-              }   
-            }
-            _ => panic!("Invalid Screen Width!")
+        
+          p {
+            r#"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+            "#
           }
-          
         }
         div {
           class: "SponsorsHeaderImageContainer",
