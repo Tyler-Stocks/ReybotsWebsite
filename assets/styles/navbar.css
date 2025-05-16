@@ -119,7 +119,7 @@ nav {
   border-radius: 7px 0 0 7px;
 
   p {
-    font-size: clamp(20px, 1.7vw, 35px);
+    font-size: max(20px, 1.7vw);
     font-family: Montserrat, sans-serif;
     color: #FFF;
   }
@@ -140,6 +140,16 @@ nav {
 @media screen and (max-width: 1200px) {
   .TopMenu {
     width: 75vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .TopMenu {
+    width: 70vw;
+
+    p {
+      font-size: max(18px, 1.8vw);
+    }
   }
 }
 
