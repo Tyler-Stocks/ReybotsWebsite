@@ -85,27 +85,25 @@ pub fn Sponsors() -> Element {
           class: "ThankYouContainer",
           h1 { "Thank You" }
           
-          match size.width() as u64 {
-            0..1200 => {
+          match size.width() {
+            0.0..=1000.0 => {
               rsx! { 
                 p {
                   r#"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."#
                 } 
               }
             } 
-            1200.. => {
+            1001.0.. => {
               rsx! {
                 p {
                   r#"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                   Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
                   In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-                  Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-                  In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-                  Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
                   "#
                 } 
               }   
             }
+            _ => panic!("Invalid Screen Width!")
           }
           
         }
@@ -129,19 +127,19 @@ pub fn Sponsors() -> Element {
           class: "SponsorTierElementsContainer",
           EngineerSponsorRight {
              name: "Country Grocer",
-            description: "They are a cool store. I remember this one time I bought a thing from them and I was like this thing is so country. But that kinda makes sense cause its the country grocer which is pretty cool",
+            description: "They are a cool store.",
             image: COUNTRY_GROCER_LOGO,
             link: Some("https://www.countrygrocer.com/"),
           }
           EngineerSponsorLeft {
              name: "Bramley House Enterprises",
-            description: "They do be doing some epic houses n' stuff. They also gave us big money so that's pretty sick of them.",
+            description: "Bramley House Enterprises is a real estate holding company based in Victoria, BC.",
             image: BRAMELY_HOUSE_ENTERPRISES_LOGO,
             link: None,
           }
           EngineerSponsorRight {
             name: "Howell Data Systems",
-            description: "They do data and other important datistical things involving data. They also do POS I think so that's pretty important",
+            description: "Whatever business challenge you need to address, HDS offers all of the necessary components for your business to excel in today's rapidly-evolving retail environment.",
             image: HOWELL_DATA_SYSTEMS_LOGO,
             link: Some("https://www.howelldatasystems.com/"),
           }
