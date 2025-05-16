@@ -1,2 +1,2 @@
-mod sponsors;
-pub use sponsors::*;
+mod sponsor;
+pub use sponsor::*;
