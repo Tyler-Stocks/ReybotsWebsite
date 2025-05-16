@@ -32,13 +32,15 @@ fn main() {
 #[component]
 #[allow(non_snake_case)]
 fn App() -> Element {
-    let show_menu = use_context_provider(|| Signal::new(false));
+    #[allow(unused_variables)]
+    let show_menu: Signal<bool> = use_context_provider(|| Signal::new(false));
 
     rsx! {
         document::Link { rel: "icon", href: FAVICON }
         document::Stylesheet { href: CSS }
 
         head {
+            // Configures font awesome, we use it for the icons found in the footer. https://fontawesome.com/
             link {
                 rel: "stylesheet",
                 href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css",
