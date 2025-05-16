@@ -1,6 +1,4 @@
 use dioxus::prelude::*;
-use dioxus_resize_observer::use_size;
-use dioxus_use_mounted::use_mounted;
 use crate::views::Footer;
 
 const CSS: Asset = asset!("/assets/styles/sponsors.css");
