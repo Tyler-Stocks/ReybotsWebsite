@@ -3,7 +3,6 @@ use dioxus::prelude::*;
 use dioxus_resize_observer::use_size;
 use dioxus_use_mounted::use_mounted;
 
-
 const NAVBAR_CSS: Asset = asset!("/assets/styles/navbar.css");
 const REYBOTS_LOGO: Asset = asset!("assets/images/Reybots Logo.svg");
 
@@ -127,7 +126,6 @@ pub fn Nav() -> Element {
     let mounted = use_mounted();
     let width: u64 = use_size(mounted).width() as u64;
 
-
     rsx! {
         document::Stylesheet { href: NAVBAR_CSS }
 
@@ -148,8 +146,8 @@ pub fn Nav() -> Element {
             }
 
             match width {
-               0..600 => rsx! { NavSideMenu {} },
-               600.. => rsx! { NavTopMenu {}  },
+               0..900 => rsx! { NavSideMenu {} },
+               900.. => rsx! { NavTopMenu {}  },
             }
         }
 
