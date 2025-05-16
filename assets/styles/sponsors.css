@@ -71,7 +71,7 @@
     }
 }
 
-.SponsorTierElementContainer {
+.EngineerSponsors {
     display: flex;
     flex-flow: column;
     gap: 7vh;
@@ -79,7 +79,6 @@
 
 .EngineerSponsor {
     display: flex;
-    flex-flow: row;
     align-items: center;
     justify-content: space-evenly;
     gap: 8vw;
@@ -97,16 +96,16 @@
     p {
         font-size: 1.6vw;
     }
-}
 
-.EngineerSponsorLeft {
-    text-align: right;
-}
+    &:nth-child(even of div) {
+        text-align: right;
+    }
 
-.EngineerSponsorRight {
-    text-align: left;
+    &:nth-child(odd of div) {
+        text-align: left;
+        flex-flow: row-reverse;
+    }
 }
-
 
 .MechanicSponsor {
     display: flex;
@@ -127,4 +126,10 @@
         color: #292929;
         max-width: 880px;
     }
+}
+
+.MechanicSponsors {
+    display: flex;
+    flex-flow: column;
+    gap: 7vh;
 }

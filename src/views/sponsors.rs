@@ -17,7 +17,7 @@ const BERNHARDT_CONTRACTING_LOGO: Asset = asset!("/assets/images/Bernhardt Contr
 const TEAM_PHOTO: Asset = asset!("/assets/images/sponsor_us.avif");
 
 #[component]
-fn EngineerSponsorLeft(
+fn EngineerSponsor(
   name: &'static str,
   description: &'static str,
   image: Asset,
@@ -25,7 +25,7 @@ fn EngineerSponsorLeft(
 ) -> Element {
   rsx! {
     div {
-      class: "EngineerSponsor EngineerSponsorLeft",
+      class: "EngineerSponsor",
 
       match link {
         Some(url) => rsx! { a { href: url, target: "_blank", rel: "noreferer", img { src: image} } },
@@ -43,37 +43,6 @@ fn EngineerSponsorLeft(
         h3 { "{name}" },
         p { "{description}" }
       }
-    }
-  }
-}
-
-#[component]
-fn EngineerSponsorRight(
-  name: &'static str, 
-  description: &'static str, 
-  link: Option<&'static str>,
-  image: Asset
-) -> Element {
-  rsx! {
-    div {
-      class: "EngineerSponsor EngineerSponsorRight",
-     
-      div {
-        class: "EngineerSponsorDescription",
-        h3 { "{name}" }
-        p { "{description}" }
-      }
-
-      match link {
-        Some(url) => rsx! { a { href: url, target: "_blank", rel: "noreferer", img { src: image} } },
-        None      => rsx! { img { src: image} }
-      }
-
-      // if link.is_empty() {
-      //   img { src: image}
-      // } else {
-      //   a { href: link, target: "_blank", rel: "noreferrer", img { src: image} }
-      // }
     }
   }
 }
@@ -118,20 +87,20 @@ pub fn Sponsors() -> Element {
         }
 
         div {
-          class: "SponsorTierElementsContainer",
-          EngineerSponsorRight {
+          class: "EngineerSponsors",
+          EngineerSponsor {
              name: "Country Grocer",
             description: "They are a cool store.",
             image: COUNTRY_GROCER_LOGO,
             link: Some("https://www.countrygrocer.com/"),
           }
-          EngineerSponsorLeft {
+          EngineerSponsor {
              name: "Bramley House Enterprises",
             description: "Bramley House Enterprises is a real estate holding company based in Victoria, BC.",
             image: BRAMELY_HOUSE_ENTERPRISES_LOGO,
             link: None,
           }
-          EngineerSponsorRight {
+          EngineerSponsor {
             name: "Howell Data Systems",
             description: "Whatever business challenge you need to address, HDS offers all of the necessary components for your business to excel in today's rapidly-evolving retail environment.",
             image: HOWELL_DATA_SYSTEMS_LOGO,
@@ -147,7 +116,7 @@ pub fn Sponsors() -> Element {
           p { "Anyone who has donated more than $500!" }
         }
         div {
-          class: "SponsorTierElementContainer"
+          class: "MechanicSponsors"
         } 
       }
     }
