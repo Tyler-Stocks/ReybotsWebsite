@@ -27,11 +27,17 @@ fn EngineerSponsorLeft(
     div {
       class: "EngineerSponsor EngineerSponsorLeft",
 
-      img {
-        src: image,
-        if link.is_some() { a { href: link.unwrap(), target: "_blank", rel: "noreferrer" } }
+      match link {
+        Some(url) => rsx! { a { href: url, target: "_blank", rel: "noreferer", img { src: image} } },
+        None      => rsx! { img { src: image} }
       }
-      
+
+      // if link.is_some() {
+      //   img { src: image}
+      // } else {
+      //   a { href: link, target: "_blank", rel: "noreferrer", img { src: image} }
+      // }
+
       div {
         class: "EngineerSponsorDescription",
         h3 { "{name}" },
@@ -45,7 +51,7 @@ fn EngineerSponsorLeft(
 fn EngineerSponsorRight(
   name: &'static str, 
   description: &'static str, 
-  link: Option<&'static str>, 
+  link: Option<&'static str>,
   image: Asset
 ) -> Element {
   rsx! {
@@ -57,11 +63,17 @@ fn EngineerSponsorRight(
         h3 { "{name}" }
         p { "{description}" }
       }
-      
-      img { 
-        src: image,
-        if link.is_some() { a { href: link.unwrap(), target: "_blank", rel: "noreferrer" } }
+
+      match link {
+        Some(url) => rsx! { a { href: url, target: "_blank", rel: "noreferer", img { src: image} } },
+        None      => rsx! { img { src: image} }
       }
+
+      // if link.is_empty() {
+      //   img { src: image}
+      // } else {
+      //   a { href: link, target: "_blank", rel: "noreferrer", img { src: image} }
+      // }
     }
   }
 }
