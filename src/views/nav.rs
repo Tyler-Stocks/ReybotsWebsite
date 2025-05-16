@@ -9,7 +9,7 @@ const REYBOTS_LOGO: Asset = asset!("assets/images/Reybots Logo.svg");
 
 #[component]
 fn SideMenuElement(destination: Route, label: &'static str) -> Element {
-    let mut show_side_menu = use_context::<Signal<bool>>();
+    let mut show_side_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     rsx! {
         Link {
@@ -22,10 +22,10 @@ fn SideMenuElement(destination: Route, label: &'static str) -> Element {
 
 #[component]
 fn NavHamburger() -> Element {
-    let mut show_menu = use_context::<Signal<bool>>();
+    let mut show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     let toggle_menu = move |_| {
-        let show_menu_value = *show_menu.read();
+        let show_menu_value: bool = *show_menu.read();
         show_menu.set(!show_menu_value);
     };
 
@@ -46,7 +46,7 @@ fn NavHamburger() -> Element {
 
 #[component]
 pub fn NavSideMenu() -> Element {
-    let show_menu = use_context::<Signal<bool>>();
+    let show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     rsx! {
         NavHamburger {}
@@ -78,7 +78,7 @@ pub fn NavSideMenu() -> Element {
 
 #[component]
 fn TopMenuElement(destination: Route, label: &'static str) -> Element {
-    let mut show_menu = use_context::<Signal<bool>>();
+    let mut show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     rsx! {
         Link {
@@ -125,7 +125,7 @@ pub fn NavTopMenu() -> Element {
 #[component]
 pub fn Nav() -> Element {
     let mounted = use_mounted();
-    let size = use_size(mounted);
+    let width: u64 = use_size(mounted).width() as u64;
 
 
     rsx! {
@@ -138,7 +138,7 @@ pub fn Nav() -> Element {
                 img { src: REYBOTS_LOGO }
 
                 p {
-                    match size.width() as u64 {
+                    match width {
                         0..1400    => "Reybots",
                         1400..1510 => "Reynolds Reybots",
                         1510..     => "Reynolds Reybots | #18840"
@@ -147,7 +147,7 @@ pub fn Nav() -> Element {
 
             }
 
-            match size.width() as u64 {
+            match width {
                0..600 => rsx! { NavSideMenu {} },
                600.. => rsx! { NavTopMenu {}  },
             }
