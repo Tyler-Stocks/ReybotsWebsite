@@ -6,8 +6,8 @@ use serde::{Deserialize, Serialize};
 #[serde(rename_all = "camelCase")]
 pub struct Sponsor {
     name: String,
-    description: String,
-    link: String,
+    description: Option<String>,
+    link: Option<String>,
     logo_file_name: String,
     amount_donated: u32
 }
