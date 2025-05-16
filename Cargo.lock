@@ -3521,6 +3521,8 @@ dependencies = [
  "dioxus",
  "dioxus-resize-observer",
  "dioxus-use-mounted",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
