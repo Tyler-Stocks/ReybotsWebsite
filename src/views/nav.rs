@@ -5,7 +5,7 @@ use dioxus_use_mounted::use_mounted;
 
 
 const NAVBAR_CSS: Asset = asset!("/assets/styles/navbar.css");
-const REYBOTS_LOGO: Asset = asset!("assets/images/reybots_logo.svg");
+const REYBOTS_LOGO: Asset = asset!("assets/images/Reybots Logo.svg");
 
 #[component]
 fn SideMenuElement(destination: Route, label: &'static str) -> Element {

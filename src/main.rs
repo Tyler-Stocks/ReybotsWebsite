@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use views::{Home, Competitions, Sponsors, SponsorUs, Contact, About, Nav, Footer};
+use views::*;
 
 mod views;
 
@@ -22,7 +22,7 @@ enum Route {
         About {},
 }
 
-const FAVICON: Asset = asset!("/assets/favicon.ico");
+const FAVICON: Asset = asset!("/assets/images/Reybots Logo.svg");
 const CSS: Asset = asset!("/assets/styles/main.css");
 
 fn main() {
@@ -30,6 +30,7 @@ fn main() {
 }
 
 #[component]
+#[allow(non_snake_case)]
 fn App() -> Element {
     let show_menu = use_context_provider(|| Signal::new(false));
 
@@ -37,7 +38,6 @@ fn App() -> Element {
         document::Link { rel: "icon", href: FAVICON }
         document::Stylesheet { href: CSS }
 
-        // Font Awesome stuff
         head {
             link {
                 rel: "stylesheet",
