@@ -96,7 +96,7 @@ pub fn Sponsors() -> Element {
           }
           EngineerSponsor {
             name: "Howell Data Systems",
-            description: "Whatever business challenge you need to address, HDS offers all of the necessary components for your business to excel in today's rapidly-evolving retail environment.",
+            description: "Whatever business challenge you need to address, HDS offers all of the necessary data for your business to excel in today's rapidly-evolving retail environment.",
             image: HOWELL_DATA_SYSTEMS_LOGO,
             link: Some("https://www.howelldatasystems.com/"),
           }
