@@ -11,7 +11,7 @@ nav {
   overflow: hidden;
   z-index: 5;
   padding-top: 25px;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
 }
 
 .LogoContainer {
@@ -22,17 +22,9 @@ nav {
 
   p {
     font-family: 'Montserrat', serif;
-    font-size: 27px;
+    font-size: max(2.2vw, 25px);
     font-weight: 600;
     color: #292929;
-  }
-}
-
-@media screen and (min-width: 2000px) {
-  .LogoContainer {
-    p {
-      font-size: 33px;
-    }
   }
 }
 
@@ -118,8 +110,8 @@ nav {
 
 .TopMenu {
   top: 0;
-  width: 60vw;
-  height: 80px;
+  width: 65vw;
+  height: max(70px, 5vw);
   background: #292929;
   transition: right 1s cubic-bezier(.42,0,0,1.01);
   display: flex;
@@ -128,24 +120,15 @@ nav {
   border-radius: 7px 0 0 7px;
 
   p {
-    font-size: 22px;
+    font-size: clamp(20px, 1.7vw, 35px);
     font-family: Montserrat, sans-serif;
     color: #FFF;
   }
 }
 
-@media screen and (min-width: 2000px) {
-  .TopMenu {
-    gap: 20px;
-    p {
-      font-size: 27px;
-    }
-  }
-}
-
 @media screen and (min-width: 1700px) {
   .TopMenu {
-    width: 50vw;
+    width: 60vw;
   }
 }
 
