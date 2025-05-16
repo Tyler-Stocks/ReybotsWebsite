@@ -110,7 +110,6 @@ nav {
 
 .TopMenu {
   top: 0;
-  width: 65vw;
   height: max(70px, 5vw);
   background: #292929;
   transition: right 1s cubic-bezier(.42,0,0,1.01);
@@ -126,13 +125,7 @@ nav {
   }
 }
 
-@media screen and (min-width: 1700px) {
-  .TopMenu {
-    width: 60vw;
-  }
-}
-
-@media screen and (min-width: 1500px) and (max-width: 1700px) {
+@media screen and (min-width: 1500px) {
   .TopMenu {
     width: 60vw;
   }
