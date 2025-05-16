@@ -32,12 +32,6 @@ fn EngineerSponsor(
         None      => rsx! { img { src: image} }
       }
 
-      // if link.is_some() {
-      //   img { src: image}
-      // } else {
-      //   a { href: link, target: "_blank", rel: "noreferrer", img { src: image} }
-      // }
-
       div {
         class: "EngineerSponsorDescription",
         h3 { "{name}" },
