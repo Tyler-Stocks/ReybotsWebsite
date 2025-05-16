@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use views::*;
 
 mod views;
-mod data;
+mod data_components;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
