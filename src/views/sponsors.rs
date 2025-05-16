@@ -1,5 +1,3 @@
-use std::fs::File;
-use dioxus::logger::tracing;
 use dioxus::prelude::*;
 use crate::data_components::Sponsor;
 use crate::views::Footer;
