@@ -8,11 +8,48 @@ const CSS: Asset = asset!("styles/sponsors.css");
 // Other photos
 const TEAM_PHOTO: Asset = asset!("/assets/images/sponsor_us.avif");
 
-const SPONSOR_LOGOS: [Asset; 3] = [
+const IMAGE_OPTIONS: ImageAssetOptions = ImageAssetOptions::new()
+    .with_preload(true)
+    .with_avif();
+
+/*
+ * Missing sponsor informatinon:
+ *      Tyler Mechanical:
+ *           Link
+ *      Corey Laprade Financial Ltd.:
+ *           Link 
+ *           Logo
+ *      Ally and Dennis Guevin:
+ *           Link
+ *           Logo
+ *      Bay Ride Electric:
+ *           Link 
+ *           Logo
+ *      Schaffer & Sons Ltd:
+ *           Link
+ *           Logo
+ *      Canadian Opinion Research Ltd.:
+ *           Link
+ *           Logo
+ *      Coulson Aviation:
+ *           Logo
+ */
+
+const SPONSOR_LOGOS: [Asset; 12] = [
   // Engineer Sponsors
-  asset!("/assets/images/Howell Data Systems Logo.avif", ImageAssetOptions::new().with_preload(true)),
-  asset!("/assets/images/Country Grocer Logo.avif", ImageAssetOptions::new().with_preload(true)),
-  asset!("/assets/images/Bramley House Enterprises Logo.avif", ImageAssetOptions::new().with_preload(true))
+  asset!("./assets/images/HowellDataSystemsLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/CountryGrocerLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/BramleyHouseEnterprisesLogo.avif", IMAGE_OPTIONS),
+  // Mechanic Sponsors
+  asset!("./assets/images/Bernhardt Contracting Logo.png", IMAGE_OPTIONS),
+  asset!("./assets/images/TylerMechanicalLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/SenseEngineeringLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/KnappetProjectsIncLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/LittleOwlLearningCenterLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/FocalEngineeringLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/StevensonLuchiesAndLeghLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/VancouverIslandChildYouthAndFamilyCounsellingServicesLogo.avif", IMAGE_OPTIONS),
+  asset!("./assets/images/EvokeBuildingsLogo.avif", IMAGE_OPTIONS)
 ];
 
 fn strip_file_hash_and_path(file_path: String) -> String {
