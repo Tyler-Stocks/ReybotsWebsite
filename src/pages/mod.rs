@@ -1,8 +1,8 @@
-//! The views module contains the data_components for all Layouts and Routes for our app. Each layout and route in our [`Route`]
-//! enum will render one of these data_components.
+//! The pages module contains the data_types for all Layouts and Routes for our app. Each layout and route in our [`Route`]
+//! enum will render one of these data_types.
 //!
 //!
-//! The [`Home`] and [`Blog`] data_components will be rendered when the current route is [`Route::Home`] or [`Route::Blog`] respectively.
+//! The [`Home`] and [`Blog`] data_types will be rendered when the current route is [`Route::Home`] or [`Route::Blog`] respectively.
 //!
 //!
 //! The [`Navbar`] component will be rendered on all pages of our app since every page is under the layout. The layout defines
@@ -11,24 +11,14 @@
 mod home;
 pub use home::Home;
 
-mod nav;
-pub use nav::Nav;
-
 mod competitions;
 pub use competitions::Competitions;
-
 mod sponsors;
 pub use sponsors::Sponsors;
-
 mod sponsor_us;
 pub use sponsor_us::SponsorUs;
-
 mod contact;
 pub use contact::Contact;
-
 mod about;
 pub use about::About;
-
-mod footer;
-pub use footer::Footer;
 

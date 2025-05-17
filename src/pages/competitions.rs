@@ -1,5 +1,6 @@
 use dioxus::prelude::*;
-use crate::views::Footer;
+
+use crate::components::Footer;
 
 #[component]
 pub fn Competitions() -> Element {

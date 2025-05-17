@@ -1,7 +1,8 @@
 use dioxus::prelude::*;
-use crate::views::Footer;
 
-const CSS: Asset = asset!("assets/styles/sponsor_us.css");
+use crate::components::Footer;
+
+const CSS: Asset = asset!("styles/sponsor_us.css");
 
 const SPONSOR_US_IMAGE: Asset = asset!("/assets/images/sponsor_us.avif");
 const SPONSOR_INSTRUCTIONS_PDF: Asset = asset!("/assets/other/Reynolds Reybots Donation Instructions.pdf");

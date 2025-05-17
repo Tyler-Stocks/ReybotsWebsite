@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use dioxus_resize_observer::use_size;
 use dioxus_use_mounted::use_mounted;
 
-const NAVBAR_CSS: Asset = asset!("/assets/styles/navbar.css");
+const NAVBAR_CSS: Asset = asset!("styles/navbar.css");
 const REYBOTS_LOGO: Asset = asset!("assets/images/Reybots Logo.svg");
 
 #[component]

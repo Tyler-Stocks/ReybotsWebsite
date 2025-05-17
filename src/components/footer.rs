@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 use crate::Route;
 
-const CSS: Asset = asset!("/assets/styles/footer.css");
+const CSS: Asset = asset!("styles/footer.css");
 
 #[component]
 pub fn Footer() -> Element {

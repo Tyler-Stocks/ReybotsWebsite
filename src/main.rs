@@ -1,9 +1,11 @@
 use dioxus::prelude::*;
 
-use views::*;
+use pages::{Home, Competitions, Sponsors, SponsorUs, Contact, About};
+use components::Nav;
 
-mod views;
-mod data_components;
+mod pages;
+mod data_types;
+mod components;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -24,7 +26,7 @@ enum Route {
 }
 
 const FAVICON: Asset = asset!("/assets/images/Reybots Logo.svg");
-const CSS: Asset = asset!("/assets/styles/main.css");
+const CSS: Asset = asset!("/styles/main.css");
 
 fn main() {
     launch(App);
