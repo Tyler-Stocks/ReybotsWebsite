@@ -11,5 +11,8 @@ dioxus-use-mounted = "0.3.1"
 serde = "1.0.219"
 serde_json = "1.0.140"
 
+[profile]
+
 [profile.wasm-dev]
+inherits = "dev"
 opt-level = 1
