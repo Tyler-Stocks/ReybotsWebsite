@@ -13,7 +13,7 @@ const SPONSOR_LOGOS: [Asset; 3] = [
   asset!("/assets/images/Bramley House Enterprises Logo.avif", ImageAssetOptions::new().with_preload(true))
 ];
 
-fn strip_file_hash_and_path(file_path: &String) -> String {
+fn strip_file_hash_and_path(file_path: String) -> String {
   let path_segments: Vec<&str> = file_path.split('/').collect();
   let file_name_with_hash: &str = path_segments[path_segments.len() - 1];
   let extension: &str = file_name_with_hash.split('.').last().unwrap();
@@ -22,20 +22,14 @@ fn strip_file_hash_and_path(file_path: &String) -> String {
 }
 
 #[component]
-fn EngineerSponsor(
-  name: String,
-  description: String,
-  image: String,
-  link: String,
-) -> Element {
+fn EngineerSponsor(name: String, description: String, image: String, link: Option<String>) -> Element {
   rsx! {
     div {
       class: "EngineerSponsor",
-
-      if link.is_empty() {
-         img { src: image}
-      } else {
-         a { href: link , target: "_blank", rel: "noreferer", img { src: image} }
+      
+      match link {
+        Some(link) => rsx! { a { href: link, target: "_blank", rel: "noreferer", img { src: image} } },
+        None       => rsx! { img { src: image} }
       }
 
       div {
@@ -52,21 +46,21 @@ pub fn Sponsors() -> Element {
   let show_menu = use_context::<Signal<bool>>();
 
   let sponsors_data = include_str!("../../data/sponsors.json");
-  let sponsors: Vec<Sponsor> = serde_json::from_str(sponsors_data)?;
+  let mut sponsors: Vec<Sponsor> = serde_json::from_str(sponsors_data)?;
 
-  let mut engineer_sponsors: Vec<Sponsor> = Vec::new();
-  let mut mechanic_sponsors: Vec<Sponsor> = Vec::new();
   let mut creator_sponsors: Vec<Sponsor> = Vec::new();
-  
-  for mut sponsor in sponsors {
-    for photo in SPONSOR_LOGOS {
-      let raw_photo_path = photo.to_string();
+  let mut mechanic_sponsors: Vec<Sponsor> = Vec::new();
+  let mut engineer_sponsors: Vec<Sponsor> = Vec::new();
 
-      if strip_file_hash_and_path(&raw_photo_path) == sponsor.logo_file_name  {
-         sponsor.logo_file_name = raw_photo_path; 
-      }
-    }  
-    
+  for sponsor in &mut sponsors {
+    if let Some(matching_logo) = SPONSOR_LOGOS.iter().find(|logo| {
+      strip_file_hash_and_path(logo.to_string()) == sponsor.logo_file_name
+    }) {
+      sponsor.logo_file_name = matching_logo.to_string();
+    }
+  }
+  
+  for sponsor in sponsors {
     match sponsor.amount_donated {
       0..=499 => creator_sponsors.push(sponsor),
       500..=999 => mechanic_sponsors.push(sponsor),
@@ -117,7 +111,7 @@ pub fn Sponsors() -> Element {
               name: sponsor.name,
               description: sponsor.description.expect("Engineer Sponsors Must Have A Description"),
               image: sponsor.logo_file_name,
-              link: sponsor.link.unwrap_or(String::new()),
+              link: sponsor.link,
             }
           }
         }
