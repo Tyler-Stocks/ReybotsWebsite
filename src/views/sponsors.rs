@@ -8,6 +8,7 @@ const CSS: Asset = asset!("/assets/styles/sponsors.css");
 const TEAM_PHOTO: Asset = asset!("/assets/images/sponsor_us.avif");
 
 const SPONSOR_LOGOS: [Asset; 3] = [
+  // Engineer Sponsors
   asset!("/assets/images/Howell Data Systems Logo.avif", ImageAssetOptions::new().with_preload(true)),
   asset!("/assets/images/Country Grocer Logo.avif", ImageAssetOptions::new().with_preload(true)),
   asset!("/assets/images/Bramley House Enterprises Logo.avif", ImageAssetOptions::new().with_preload(true))
@@ -54,7 +55,7 @@ pub fn Sponsors() -> Element {
 
   sponsors.iter_mut()
       .for_each(
-        |sponsor|{
+        |sponsor| {
           if let Some(logo) = SPONSOR_LOGOS.iter().find(|logo| { strip_file_hash_and_path(logo.to_string()) == sponsor.logo_file_name }) {
             sponsor.logo_file_name = logo.to_string();
           }
