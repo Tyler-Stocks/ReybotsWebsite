@@ -26,7 +26,7 @@ fn EngineerSponsor(name: String, description: String, image: String, link: Optio
   rsx! {
     div {
       class: "EngineerSponsor",
-      
+
       match link {
         Some(link) => rsx! { a { href: link, target: "_blank", rel: "noreferer", img { src: image} } },
         None       => rsx! { img { src: image} }
@@ -52,21 +52,25 @@ pub fn Sponsors() -> Element {
   let mut mechanic_sponsors: Vec<Sponsor> = Vec::new();
   let mut engineer_sponsors: Vec<Sponsor> = Vec::new();
 
-  for sponsor in &mut sponsors {
-    if let Some(matching_logo) = SPONSOR_LOGOS.iter().find(|logo| {
-      strip_file_hash_and_path(logo.to_string()) == sponsor.logo_file_name
-    }) {
-      sponsor.logo_file_name = matching_logo.to_string();
-    }
-  }
+  sponsors.iter_mut()
+      .for_each(
+        |sponsor|{
+          if let Some(logo) = SPONSOR_LOGOS.iter().find(|logo| { strip_file_hash_and_path(logo.to_string()) == sponsor.logo_file_name }) {
+            sponsor.logo_file_name = logo.to_string();
+          }
+        }
+      );
   
-  for sponsor in sponsors {
-    match sponsor.amount_donated {
-      0..=499 => creator_sponsors.push(sponsor),
-      500..=999 => mechanic_sponsors.push(sponsor),
-      1000.. => engineer_sponsors.push(sponsor),
-    }
-  }
+  sponsors.into_iter()
+      .for_each(
+        |sponsor| {
+          match sponsor.amount_donated {
+            0..=499 => creator_sponsors.push(sponsor),
+            500..=999 => mechanic_sponsors.push(sponsor),
+            1000.. => engineer_sponsors.push(sponsor),     
+          }
+        }
+      );
 
   rsx! {
     document::Stylesheet { href: CSS }
