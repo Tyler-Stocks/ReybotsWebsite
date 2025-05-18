@@ -35,6 +35,7 @@ const IMAGE_OPTIONS: ImageAssetOptions = ImageAssetOptions::new()
  *           Logo
  */
 
+// Must be a slice, as Vec<Asset> requires an allocator, not available at compile time
 const SPONSOR_LOGOS: [Asset; 8] = [
   // Engineer Sponsors
   asset!("/assets/images/HowellDataSystemsLogo.avif", IMAGE_OPTIONS),
