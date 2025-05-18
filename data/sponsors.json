@@ -3,63 +3,63 @@
     "name": "Country Grocer",
     "description": "I don't even know at this point lol",
     "link": "https://www.countrygrocer.com/",
-    "logoFileName": "Country Grocer Logo.avif",
+    "logoFileName": "CountryGrocerLogo.avif",
     "amountDonated": 2000
   },
   {
     "name": "Bramley House Enterprises",
     "description": "They will have one of those 'description' things eventually.",
     "link": null,
-    "logoFileName": "Bramley House Enterprises Logo.avif",
+    "logoFileName": "BramleyHous EnterprisesLogo.avif",
     "amountDonated": 1500
   },
   {
     "name": "Howell Data Systems",
     "description": "Descriptions are pretty cool, it would be shame if this one was left like this.",
     "link": "https://www.howelldatasystems.com/",
-    "logoFileName": "Howell Data Systems Logo.avif",
+    "logoFileName": "HowellDataSystemsLogo.avif",
     "amountDonated": 1000
   },
   {
     "name": "Bernhardt Contracting",
     "description": null,
     "link": "https://bernhardtcontracting.com/",
-    "logoFileName": "Bernhardt Contracting Logo.avif",
+    "logoFileName": "BernhardtContractingLogo.avif",
     "amountDonated": 500
   },
   {
     "name": "Tyler Mechanical",
     "description": null,
     "link": null,
-    "logoFileName": "Tyler Mechanical Logo.avif",
+    "logoFileName": "TylerMechanicalLogo.avif",
     "amountDonated": 500
   },
   {
     "name": "Sense Engineering",
     "description": null,
     "link": "https://senseengineering.com/",
-    "logoFileName": "Sense Engineering Logo.avif",
+    "logoFileName": "SenseEngineeringLogo.avif",
     "amountDonated": 500
   },
   {
     "name": "Knappet Projects Inc.",
     "description": null,
     "link": "https://knappett.com/",
-    "logoFileName": "Knappet Projects Inc Logo.avif",
+    "logoFileName": "KnappetProjectsIncLogo.avif",
     "amountDonated": 500
   },
   {
-    "name": "Corey Laprade Financial Ltd.",
+    "name": "CoreyLapradeFinancialLtd.",
     "description": null,
     "link": "",
-    "logoFileName": "Corey Laprade Financial Ltd Logo.avif",
+    "logoFileName": "CoreyLapradeFinancialLtdLogo.avif",
     "amountDonated": 500
   },
   {
     "name": "Ally and Dennis Guevin",
     "description": null,
     "link": "https://allyanddennis.com/",
-    "logoFileName": "Ally and Dennis Guevin Logo.avif",
+    "logoFileName": "AllyAndDennisGuevinLogo.avif",
     "amountDonated": 500
   },
   {
@@ -73,63 +73,63 @@
     "name": "Bay Ridge Electric",
     "description": null,
     "link": "",
-    "logoFileName": "Bay Ridge Electric Logo.avif",
+    "logoFileName": "BayRidgeElectricLogo.avif",
     "amountDonated": 400
   },
   {
     "name": "Little Owl Learning Center",
     "description": null,
     "link": "https://www.littleowllearningcentre.ca/",
-    "logoFileName": "Little Owl Learning Center Logo.avif",
+    "logoFileName": "LittleOwlLearningCenterLogo.avif",
     "amountDonated": 300
   },
   {
     "name": "Schaffer & Sons Ltd",
     "description": null,
     "link": "https://shafferandsonslawnandgarden.ca/",
-    "logoFileName": "Schaffer and Sons Ltd Logo.avif",
+    "logoFileName": "SchafferAndSonsLtdLogo.avif",
     "amountDonated": 200
   },
   {
     "name": "Canadian Opinion Research Ltd.",
     "description": null,
     "link": null,
-    "logoFileName": "Canadian Opinion Research Ltd Logo.avif",
+    "logoFileName": "CanadianOpinionResearchLtdLogo.avif",
     "amountDonated": 300
   },
   {
     "name": "Stevenson Luchies & Leigh",
     "description": null,
     "link": "https://sll.ca/",
-    "logoFileName": "Stevenson Luchies and Legh Logo.avif",
+    "logoFileName": "StevensonLuchiesAndLeghLogo.avif",
     "amountDonated": 250
   },
   {
     "name": "Focal Engineering",
     "description": null,
     "link": "https://focaleng.com/",
-    "logoFileName": "Focal Engineering Logo.avif",
+    "logoFileName": "FocalEngineeringLogo.avif",
     "amountDonated": 200
   },
   {
     "name": "Coulson Aviation",
     "description": null,
     "link": "https://www.coulsonaviationusa.com/",
-    "logoFileName": "Coulson Aviation Logo.avif",
+    "logoFileName": "CoulsonAviationLogo.avif",
     "amountDonated": 200
   },
   {
     "name": "Vancouver Island Child Youth and Family Counselling Services",
     "description": null,
     "link": "https://vicyfcs.com/",
-    "logoFileName": "Vancouver Island Child Youth and Family Counselling Services Logo.avif",
+    "logoFileName": "VancouverIslandChildYouthAndFamilyCounsellingServicesLogo.avif",
     "amountDonated": 100
   },
   {
     "name": "Evoke Buildings",
     "description": null,
     "link": "https://www.evokebuildings.com/",
-    "logoFileName": "Evoke Buildings Logo.avif",
+    "logoFileName": "EvokeBuildingsLogo.avif",
     "amountDonated": 100
   }
 ]
