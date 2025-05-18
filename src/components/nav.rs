@@ -52,23 +52,23 @@ pub fn NavSideMenu() -> Element {
         div {
             class: if *show_menu.read() { "SideMenu SideMenuOpen" } else { "SideMenu SideMenuClosed" },
                 SideMenuElement {
-                    destination: Route::About {},
+                    destination: Route::AboutPage {},
                     label: "About"
                 }
                 SideMenuElement {
-                    destination: Route::Sponsors {},
+                    destination: Route::SponsorsPage {},
                     label: "Sponsors"
                 }
                 SideMenuElement {
-                    destination: Route::SponsorUs {},
+                    destination: Route::SponsorUsPage {},
                     label: "Sponsor Us"
                 }
                 SideMenuElement {
-                    destination: Route::Competitions {},
+                    destination: Route::CompetitionsPage {},
                     label: "Competitions"
                 }
                 SideMenuElement {
-                    destination: Route::Contact {},
+                    destination: Route::ContactPage {},
                     label: "Contact"
                 }
         }
@@ -94,27 +94,27 @@ pub fn NavTopMenu() -> Element {
         div {
             class: "TopMenu",
             TopMenuElement {
-                destination: Route::Home {},
+                destination: Route::HomePage {},
                 label: "Home"
             }
             TopMenuElement {
-                destination: Route::Sponsors {},
+                destination: Route::SponsorsPage {},
                 label: "Sponsors"
             }
             TopMenuElement {
-                destination: Route::SponsorUs {},
+                destination: Route::SponsorUsPage {},
                 label: "Sponsor Us"
             }
             TopMenuElement {
-                destination: Route::Competitions {},
+                destination: Route::CompetitionsPage {},
                 label: "Competitions"
             }
             TopMenuElement {
-                destination: Route::About {},
+                destination: Route::AboutPage {},
                 label: "About"
             }
             TopMenuElement {
-                destination: Route::Contact {},
+                destination: Route::ContactPage {},
                 label: "Contact"
             }
         }

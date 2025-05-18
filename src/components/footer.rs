@@ -14,7 +14,7 @@ pub fn Footer() -> Element {
                 "Interested in Funding Our Team?"
             }
             Link {
-                to: Route::SponsorUs {},
+                to: Route::SponsorUsPage {},
                 button {
                     class: "SponsorUsButton",
                     "Sponsor Us!"
