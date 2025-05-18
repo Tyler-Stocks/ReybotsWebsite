@@ -35,16 +35,17 @@ const IMAGE_OPTIONS: ImageAssetOptions = ImageAssetOptions::new()
  *           Logo
  */
 
-const SPONSOR_LOGOS: [Asset; 7] = [
+const SPONSOR_LOGOS: [Asset; 8] = [
   // Engineer Sponsors
-  asset!("./assets/images/HowellDataSystemsLogo.avif", IMAGE_OPTIONS),
-  asset!("./assets/images/CountryGrocerLogo.avif", IMAGE_OPTIONS),
-  asset!("./assets/images/BramleyHouseEnterprisesLogo.avif", IMAGE_OPTIONS),
+  asset!("/assets/images/HowellDataSystemsLogo.avif", IMAGE_OPTIONS),
+  asset!("/assets/images/CountryGrocerLogo.avif", IMAGE_OPTIONS),
+  asset!("/assets/images/BramleyHouseEnterprisesLogo.avif", IMAGE_OPTIONS),
   // Mechanic Sponsors
-  asset!("./assets/images/Bernhardt Contracting Logo.png", IMAGE_OPTIONS),
-  asset!("./assets/images/TylerMechanicalLogo.avif", IMAGE_OPTIONS),
-  asset!("./assets/images/SenseEngineeringLogo.avif", IMAGE_OPTIONS),
-  asset!("./assets/images/KnappetProjectsIncLogo.avif", IMAGE_OPTIONS),
+  asset!("/assets/images/Bernhardt Contracting Logo.png", IMAGE_OPTIONS),
+  asset!("/assets/images/TylerMechanicalLogo.avif", IMAGE_OPTIONS),
+  asset!("/assets/images/SenseEngineeringLogo.avif", IMAGE_OPTIONS),
+  asset!("/assets/images/KnappetProjectsIncLogo.avif", IMAGE_OPTIONS),
+  asset!("/assets/images/FronteraHomesLogo.avif", IMAGE_OPTIONS)
 ];
 
 fn strip_file_hash_and_path(file_path: String) -> String {
