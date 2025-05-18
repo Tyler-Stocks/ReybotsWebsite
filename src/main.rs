@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use pages::{Home, Competitions, Sponsors, SponsorUs, Contact, About};
+use pages::{HomePage, CompetitionsPage, SponsorsPage, SponsorUsPage, ContactPage, AboutPage};
 use components::Nav;
 
 mod pages;

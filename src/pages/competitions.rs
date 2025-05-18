@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use crate::components::Footer;
 
 #[component]
-pub fn Competitions() -> Element {
+pub fn CompetitionsPage() -> Element {
   rsx! {
     Footer {}
   }

@@ -8,7 +8,7 @@ const SPONSOR_US_IMAGE: Asset = asset!("/assets/images/sponsor_us.avif");
 const SPONSOR_INSTRUCTIONS_PDF: Asset = asset!("/assets/other/Reynolds Reybots Donation Instructions.pdf");
 
 #[component]
-pub fn SponsorUs() -> Element {
+pub fn SponsorUsPage() -> Element {
   rsx! {
     document::Stylesheet { href: CSS }
 

@@ -78,7 +78,7 @@ fn EngineerSponsor(name: String, description: String, image: String, link: Optio
 }
 
 #[component]
-pub fn Sponsors() -> Element {
+pub fn SponsorsPage() -> Element {
   let show_menu = use_context::<Signal<bool>>();
 
   let sponsors_data = include_str!("../../data/sponsors.json");
