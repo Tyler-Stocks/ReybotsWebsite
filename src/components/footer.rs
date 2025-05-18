@@ -4,6 +4,7 @@ use crate::Route;
 const CSS: Asset = asset!("styles/footer.css");
 
 #[component]
+#[allow(non_snake_case)]
 pub fn Footer() -> Element {
     rsx! {
         document::Stylesheet { href: CSS }

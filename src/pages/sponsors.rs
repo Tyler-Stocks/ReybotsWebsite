@@ -58,6 +58,7 @@ fn strip_file_hash_and_path(file_path: String) -> String {
 }
 
 #[component]
+#[allow(non_snake_case)]
 fn EngineerSponsor(name: String, description: String, image: String, link: Option<String>) -> Element {
   rsx! {
     div {
@@ -78,6 +79,7 @@ fn EngineerSponsor(name: String, description: String, image: String, link: Optio
 }
 
 #[component]
+#[allow(non_snake_case)]
 pub fn SponsorsPage() -> Element {
   let show_menu = use_context::<Signal<bool>>();
 

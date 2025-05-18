@@ -7,6 +7,7 @@ const NAVBAR_CSS: Asset = asset!("styles/navbar.css");
 const REYBOTS_LOGO: Asset = asset!("assets/images/Reybots Logo.svg");
 
 #[component]
+#[allow(non_snake_case)]
 fn SideMenuElement(destination: Route, label: &'static str) -> Element {
     let mut show_side_menu: Signal<bool> = use_context::<Signal<bool>>();
 
@@ -20,6 +21,7 @@ fn SideMenuElement(destination: Route, label: &'static str) -> Element {
 }
 
 #[component]
+#[allow(non_snake_case)]
 fn NavHamburger() -> Element {
     let mut show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
@@ -44,6 +46,7 @@ fn NavHamburger() -> Element {
 }
 
 #[component]
+#[allow(non_snake_case)]
 pub fn NavSideMenu() -> Element {
     let show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
@@ -76,6 +79,7 @@ pub fn NavSideMenu() -> Element {
 }
 
 #[component]
+#[allow(non_snake_case)]
 fn TopMenuElement(destination: Route, label: &'static str) -> Element {
     let mut show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
@@ -89,6 +93,7 @@ fn TopMenuElement(destination: Route, label: &'static str) -> Element {
 }
 
 #[component]
+#[allow(non_snake_case)]
 pub fn NavTopMenu() -> Element {
     rsx! {
         div {
@@ -122,6 +127,7 @@ pub fn NavTopMenu() -> Element {
 }
 
 #[component]
+#[allow(non_snake_case)]
 pub fn Nav() -> Element {
     let mounted = use_mounted();
     let width: u64 = use_size(mounted).width() as u64;
