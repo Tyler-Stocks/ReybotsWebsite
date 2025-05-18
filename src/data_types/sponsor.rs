@@ -11,3 +11,18 @@ pub struct Sponsor {
     pub logo_file_name: String,
     pub amount_donated: u32
 }
+
+#[derive(Debug, Eq, PartialEq, Ord, PartialOrd)]
+pub struct Sponsors {
+    pub creator: Vec<Sponsor>,
+    pub mechanic: Vec<Sponsor>,
+    pub engineer: Vec<Sponsor>
+}
+
+impl Sponsors {
+    
+    #[must_use]
+    pub fn new() -> Self {
+        Sponsors { creator: Vec::new(), mechanic: Vec::new(), engineer: Vec::new() }
+    }
+}
