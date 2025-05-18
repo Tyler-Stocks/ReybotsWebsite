@@ -12,17 +12,17 @@ mod components;
 enum Route {
     #[layout(Nav)]
         #[route("/")]
-        Home {},
+        HomePage {},
         #[route("/competitions")]
-        Competitions {},
+        CompetitionsPage {},
         #[route("/sponsors")]
-        Sponsors {},
+        SponsorsPage {},
         #[route("/sponsor_us")]
-        SponsorUs {},
+        SponsorUsPage {},
         #[route("/contact")]
-        Contact {},
+        ContactPage {},
         #[route("/about")]
-        About {},
+        AboutPage {},
 }
 
 const FAVICON: Asset = asset!("/assets/images/Reybots Logo.svg");
