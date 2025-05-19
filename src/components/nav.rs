@@ -8,20 +8,6 @@ const REYBOTS_LOGO: Asset = asset!("assets/images/Reybots Logo.svg");
 
 #[component]
 #[allow(non_snake_case)]
-fn SideMenuElementComponent(destination: Route, label: &'static str) -> Element {
-    let mut show_side_menu: Signal<bool> = use_context::<Signal<bool>>();
-
-    rsx! {
-        Link {
-            onclick: move |_| show_side_menu.set(false),
-            to: destination,
-            p { class: "SideMenuElement", "{label}" }
-        }
-    }
-}
-
-#[component]
-#[allow(non_snake_case)]
 fn NavHamburgerComponent() -> Element {
     let mut show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
@@ -41,6 +27,20 @@ fn NavHamburgerComponent() -> Element {
             rect { width: 27, height: 4, rx: 2 }
             rect { y: 18, width: 27, height: 4, rx: 2 }
             rect { x: 11, y: 9, width: 16, height: 4, rx: 2 }
+        }
+    }
+}
+
+#[component]
+#[allow(non_snake_case)]
+fn SideMenuElementComponent(destination: Route, label: &'static str) -> Element {
+    let mut show_side_menu: Signal<bool> = use_context::<Signal<bool>>();
+
+    rsx! {
+        Link {
+            onclick: move |_| show_side_menu.set(false),
+            to: destination,
+            p { class: "SideMenuElement", "{label}" }
         }
     }
 }
