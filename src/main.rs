@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use pages::{HomePage, CompetitionsPage, SponsorsPage, SponsorUsPage, ContactPage, AboutPage};
-use components::Nav;
+use components::NavComponent;
 
 mod pages;
 mod data_types;
@@ -10,7 +10,7 @@ mod components;
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
-    #[layout(Nav)]
+    #[layout(NavComponent)]
         #[route("/")]
         HomePage {},
         #[route("/competitions")]

@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::components::Footer;
+use crate::components::FooterComponent;
 
 const CSS: Asset = asset!("styles/sponsor_us.css");
 
@@ -48,6 +48,6 @@ pub fn SponsorUsPage() -> Element {
       }
     }
 
-    Footer {}
+    FooterComponent {}
   }
 }

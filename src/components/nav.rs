@@ -8,7 +8,7 @@ const REYBOTS_LOGO: Asset = asset!("assets/images/Reybots Logo.svg");
 
 #[component]
 #[allow(non_snake_case)]
-fn SideMenuElement(destination: Route, label: &'static str) -> Element {
+fn SideMenuElementComponent(destination: Route, label: &'static str) -> Element {
     let mut show_side_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     rsx! {
@@ -22,7 +22,7 @@ fn SideMenuElement(destination: Route, label: &'static str) -> Element {
 
 #[component]
 #[allow(non_snake_case)]
-fn NavHamburger() -> Element {
+fn NavHamburgerComponent() -> Element {
     let mut show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     let toggle_menu = move |_| {
@@ -47,30 +47,30 @@ fn NavHamburger() -> Element {
 
 #[component]
 #[allow(non_snake_case)]
-pub fn NavSideMenu() -> Element {
+pub fn NavSideMenuComponent() -> Element {
     let show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     rsx! {
-        NavHamburger {}
+        NavHamburgerComponent {}
         div {
             class: if *show_menu.read() { "SideMenu SideMenuOpen" } else { "SideMenu SideMenuClosed" },
-                SideMenuElement {
+                SideMenuElementComponent {
                     destination: Route::AboutPage {},
                     label: "About"
                 }
-                SideMenuElement {
+                SideMenuElementComponent {
                     destination: Route::SponsorsPage {},
                     label: "Sponsors"
                 }
-                SideMenuElement {
+                SideMenuElementComponent {
                     destination: Route::SponsorUsPage {},
                     label: "Sponsor Us"
                 }
-                SideMenuElement {
+                SideMenuElementComponent {
                     destination: Route::CompetitionsPage {},
                     label: "Competitions"
                 }
-                SideMenuElement {
+                SideMenuElementComponent {
                     destination: Route::ContactPage {},
                     label: "Contact"
                 }
@@ -80,7 +80,7 @@ pub fn NavSideMenu() -> Element {
 
 #[component]
 #[allow(non_snake_case)]
-fn TopMenuElement(destination: Route, label: &'static str) -> Element {
+fn TopMenuElementComponent(destination: Route, label: &'static str) -> Element {
     let mut show_menu: Signal<bool> = use_context::<Signal<bool>>();
 
     rsx! {
@@ -94,31 +94,31 @@ fn TopMenuElement(destination: Route, label: &'static str) -> Element {
 
 #[component]
 #[allow(non_snake_case)]
-pub fn NavTopMenu() -> Element {
+pub fn NavTopMenuComponent() -> Element {
     rsx! {
         div {
             class: "TopMenu",
-            TopMenuElement {
+            TopMenuElementComponent {
                 destination: Route::HomePage {},
                 label: "Home"
             }
-            TopMenuElement {
+            TopMenuElementComponent {
                 destination: Route::SponsorsPage {},
                 label: "Sponsors"
             }
-            TopMenuElement {
+            TopMenuElementComponent {
                 destination: Route::SponsorUsPage {},
                 label: "Sponsor Us"
             }
-            TopMenuElement {
+            TopMenuElementComponent {
                 destination: Route::CompetitionsPage {},
                 label: "Competitions"
             }
-            TopMenuElement {
+            TopMenuElementComponent {
                 destination: Route::AboutPage {},
                 label: "About"
             }
-            TopMenuElement {
+            TopMenuElementComponent {
                 destination: Route::ContactPage {},
                 label: "Contact"
             }
@@ -128,7 +128,7 @@ pub fn NavTopMenu() -> Element {
 
 #[component]
 #[allow(non_snake_case)]
-pub fn Nav() -> Element {
+pub fn NavComponent() -> Element {
     let mounted = use_mounted();
     let width: u64 = use_size(mounted).width() as u64;
 
@@ -152,8 +152,8 @@ pub fn Nav() -> Element {
             }
 
             match width {
-               0..900 => rsx! { NavSideMenu {} },
-               900.. => rsx! { NavTopMenu {}  },
+               0..900 => rsx! { NavSideMenuComponent {} },
+               900.. => rsx! { NavTopMenuComponent {}  },
             }
         }
 

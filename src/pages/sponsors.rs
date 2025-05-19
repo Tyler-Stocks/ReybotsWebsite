@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 use crate::data_types::*;
 
-use crate::components::Footer;
+use crate::components::FooterComponent;
 
 const CSS: Asset = asset!("styles/sponsors.css");
 
@@ -51,7 +51,7 @@ const SPONSOR_LOGOS: [Asset; 8] = [
 
 #[component]
 #[allow(non_snake_case)]
-fn EngineerSponsor(name: String, description: String, image: String, link: Option<String>) -> Element {
+fn EngineerSponsorComponent(name: String, description: String, image: String, link: Option<String>) -> Element {
   rsx! {
     div {
       class: "EngineerSponsor",
@@ -119,7 +119,7 @@ pub fn SponsorsPage() -> Element {
           class: "EngineerSponsors",
 
           for sponsor in sponsors.engineer {
-            EngineerSponsor {
+            EngineerSponsorComponent {
               name: sponsor.name,
               description: sponsor.description,
               image: sponsor.logo_file_name,
@@ -140,6 +140,6 @@ pub fn SponsorsPage() -> Element {
         } 
       }
     }
-    Footer {}
+    FooterComponent {}
   }
 }

@@ -1,5 +1,5 @@
 mod footer;
-pub use footer::Footer;
+pub use footer::FooterComponent;
 
 mod nav;
-pub use nav::Nav;
+pub use nav::NavComponent;

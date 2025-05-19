@@ -5,7 +5,7 @@ const CSS: Asset = asset!("styles/footer.css");
 
 #[component]
 #[allow(non_snake_case)]
-pub fn Footer() -> Element {
+pub fn FooterComponent() -> Element {
     rsx! {
         document::Stylesheet { href: CSS }
         
