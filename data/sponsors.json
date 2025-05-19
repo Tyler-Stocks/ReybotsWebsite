@@ -9,7 +9,6 @@
     {
       "name": "Bramley House Enterprises",
       "description": "They will have one of those 'description' things eventually.",
-      "link": null,
       "logoFileName": "BramleyHouseEnterprisesLogo.avif"
     },
     {
@@ -27,7 +26,6 @@
     },
     {
       "name": "Tyler Mechanical",
-      "link": null,
       "logoFileName": "TylerMechanicalLogo.avif"
     },
     {
@@ -59,7 +57,6 @@
   "creator": [
     {
       "name": "Bay Ridge Electric",
-      "link": null,
       "logoFileName": "BayRidgeElectricLogo.avif"
     },
     {
@@ -74,7 +71,6 @@
     },
     {
       "name": "Canadian Opinion Research Ltd.",
-      "link": null,
       "logoFileName": "CanadianOpinionResearchLtdLogo.avif"
     },
     {

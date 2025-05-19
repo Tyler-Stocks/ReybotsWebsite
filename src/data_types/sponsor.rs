@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 #[serde(rename_all = "camelCase")]
 pub struct CreatorSponsor {
     pub name: String,
+    #[serde(default)]
     pub link: Option<String>,
     pub logo_file_name: String,
 }
@@ -15,6 +16,7 @@ pub struct CreatorSponsor {
 #[serde(rename_all = "camelCase")]
 pub struct MechanicSponsor {
     pub name: String,
+    #[serde(default)]
     pub link: Option<String>,
     pub logo_file_name: String,
 }
@@ -23,6 +25,7 @@ pub struct MechanicSponsor {
 #[serde(rename_all = "camelCase")]
 pub struct EngineerSponsor {
     pub name: String,
+    #[serde(default)]
     pub link: Option<String>,
     pub logo_file_name: String,
     pub description: String
