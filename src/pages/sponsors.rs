@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use crate::data_types::Sponsor;
+use crate::data_types::*;
 
 use crate::components::Footer;
 
@@ -49,14 +49,6 @@ const SPONSOR_LOGOS: [Asset; 8] = [
   asset!("/assets/images/FronteraHomesLogo.avif", IMAGE_OPTIONS)
 ];
 
-fn strip_file_hash_and_path(file_path: String) -> String {
-  let path_segments: Vec<&str> = file_path.split('/').collect();
-  let file_name_with_hash: &str = path_segments[path_segments.len() - 1];
-  let extension: &str = file_name_with_hash.split('.').last().unwrap();
-  let file_name: &str = file_name_with_hash.split('-').collect::<Vec<_>>()[0];
-  format!("{}.{}", file_name, extension).to_string()
-}
-
 #[component]
 #[allow(non_snake_case)]
 fn EngineerSponsor(name: String, description: String, image: String, link: Option<String>) -> Element {
@@ -84,31 +76,9 @@ pub fn SponsorsPage() -> Element {
   let show_menu = use_context::<Signal<bool>>();
 
   let sponsors_data = include_str!("../../data/sponsors.json");
-  let mut sponsors: Vec<Sponsor> = serde_json::from_str(sponsors_data)?;
+  let mut sponsors: Sponsors = serde_json::from_str(sponsors_data)?;
 
-  let mut creator_sponsors: Vec<Sponsor> = Vec::new();
-  let mut mechanic_sponsors: Vec<Sponsor> = Vec::new();
-  let mut engineer_sponsors: Vec<Sponsor> = Vec::new();
-
-  sponsors.iter_mut()
-      .for_each(
-        |sponsor| {
-          if let Some(logo) = SPONSOR_LOGOS.iter().find(|logo| { strip_file_hash_and_path(logo.to_string()) == sponsor.logo_file_name }) {
-            sponsor.logo_file_name = logo.to_string();
-          }
-        }
-      );
-  
-  sponsors.into_iter()
-      .for_each(
-        |sponsor| {
-          match sponsor.amount_donated {
-            0..=499 => creator_sponsors.push(sponsor),
-            500..=999 => mechanic_sponsors.push(sponsor),
-            1000.. => engineer_sponsors.push(sponsor),     
-          }
-        }
-      );
+  sponsors.inject_logo_paths(Box::new(SPONSOR_LOGOS)); 
 
   rsx! {
     document::Stylesheet { href: CSS }
@@ -148,10 +118,10 @@ pub fn SponsorsPage() -> Element {
         div {
           class: "EngineerSponsors",
 
-          for sponsor in engineer_sponsors {
+          for sponsor in sponsors.engineer {
             EngineerSponsor {
               name: sponsor.name,
-              description: sponsor.description.expect("Engineer Sponsors Must Have A Description"),
+              description: sponsor.description,
               image: sponsor.logo_file_name,
               link: sponsor.link,
             }

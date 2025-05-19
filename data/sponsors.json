@@ -1,135 +1,106 @@
-[
-  {
-    "name": "Country Grocer",
-    "description": "I don't even know at this point lol",
-    "link": "https://www.countrygrocer.com/",
-    "logoFileName": "CountryGrocerLogo.avif",
-    "amountDonated": 2000
-  },
-  {
-    "name": "Bramley House Enterprises",
-    "description": "They will have one of those 'description' things eventually.",
-    "link": null,
-    "logoFileName": "BramleyHouseEnterprisesLogo.avif",
-    "amountDonated": 1500
-  },
-  {
-    "name": "Howell Data Systems",
-    "description": "Descriptions are pretty cool, it would be shame if this one was left like this.",
-    "link": "https://www.howelldatasystems.com/",
-    "logoFileName": "HowellDataSystemsLogo.avif",
-    "amountDonated": 1000
-  },
-  {
-    "name": "Bernhardt Contracting",
-    "description": null,
-    "link": "https://bernhardtcontracting.com/",
-    "logoFileName": "BernhardtContractingLogo.avif",
-    "amountDonated": 500
-  },
-  {
-    "name": "Tyler Mechanical",
-    "description": null,
-    "link": null,
-    "logoFileName": "TylerMechanicalLogo.avif",
-    "amountDonated": 500
-  },
-  {
-    "name": "Sense Engineering",
-    "description": null,
-    "link": "https://senseengineering.com/",
-    "logoFileName": "SenseEngineeringLogo.avif",
-    "amountDonated": 500
-  },
-  {
-    "name": "Knappet Projects Inc.",
-    "description": null,
-    "link": "https://knappett.com/",
-    "logoFileName": "KnappetProjectsIncLogo.avif",
-    "amountDonated": 500
-  },
-  {
-    "name": "CoreyLapradeFinancialLtd.",
-    "description": null,
-    "link": "",
-    "logoFileName": "CoreyLapradeFinancialLtdLogo.avif",
-    "amountDonated": 500
-  },
-  {
-    "name": "Ally and Dennis Guevin",
-    "description": null,
-    "link": "https://allyanddennis.com/",
-    "logoFileName": "AllyAndDennisGuevinLogo.avif",
-    "amountDonated": 500
-  },
-  {
-    "name": "Frontera Homes",
-    "description": null,
-    "link": "https://fronterahomes.ca/",
-    "logoFileName": "FronteraHomesLogo.avif",
-    "amountDonated": 500
-  },
-  {
-    "name": "Bay Ridge Electric",
-    "description": null,
-    "link": "",
-    "logoFileName": "BayRidgeElectricLogo.avif",
-    "amountDonated": 400
-  },
-  {
-    "name": "Little Owl Learning Center",
-    "description": null,
-    "link": "https://www.littleowllearningcentre.ca/",
-    "logoFileName": "LittleOwlLearningCenterLogo.avif",
-    "amountDonated": 300
-  },
-  {
-    "name": "Schaffer & Sons Ltd",
-    "description": null,
-    "link": "https://shafferandsonslawnandgarden.ca/",
-    "logoFileName": "SchafferAndSonsLtdLogo.avif",
-    "amountDonated": 200
-  },
-  {
-    "name": "Canadian Opinion Research Ltd.",
-    "description": null,
-    "link": null,
-    "logoFileName": "CanadianOpinionResearchLtdLogo.avif",
-    "amountDonated": 300
-  },
-  {
-    "name": "Stevenson Luchies & Leigh",
-    "description": null,
-    "link": "https://sll.ca/",
-    "logoFileName": "StevensonLuchiesAndLeghLogo.avif",
-    "amountDonated": 250
-  },
-  {
-    "name": "Focal Engineering",
-    "description": null,
-    "link": "https://focaleng.com/",
-    "logoFileName": "FocalEngineeringLogo.avif",
-    "amountDonated": 200
-  },
-  {
-    "name": "Coulson Aviation",
-    "description": null,
-    "link": "https://www.coulsonaviationusa.com/",
-    "logoFileName": "CoulsonAviationLogo.avif",
-    "amountDonated": 200
-  },
-  {
-    "name": "Vancouver Island Child Youth and Family Counselling Services",
-    "description": null,
-    "link": "https://vicyfcs.com/",
-    "logoFileName": "VancouverIslandChildYouthAndFamilyCounsellingServicesLogo.avif",
-    "amountDonated": 100
-  },
-  {
-    "name": "Evoke Buildings",
-    "description": null,
-    "link": "https://www.evokebuildings.com/",
-    "logoFileName": "EvokeBuildingsLogo.avif",
-    "amountDonated": 100
-  }
-]
+{
+  "engineer": [
+    {
+      "name": "Country Grocer",
+      "description": "I don't even know at this point lol",
+      "link": "https://www.countrygrocer.com/",
+      "logoFileName": "CountryGrocerLogo.avif"
+    },
+    {
+      "name": "Bramley House Enterprises",
+      "description": "They will have one of those 'description' things eventually.",
+      "link": null,
+      "logoFileName": "BramleyHouseEnterprisesLogo.avif"
+    },
+    {
+      "name": "Howell Data Systems",
+      "description": "Descriptions are pretty cool, it would be shame if this one was left like this.",
+      "link": "https://www.howelldatasystems.com/",
+      "logoFileName": "HowellDataSystemsLogo.avif"
+    }
+  ],
+  "mechanic": [
+    {
+      "name": "Bernhardt Contracting",
+      "link": "https://bernhardtcontracting.com/",
+      "logoFileName": "BernhardtContractingLogo.avif"
+    },
+    {
+      "name": "Tyler Mechanical",
+      "link": null,
+      "logoFileName": "TylerMechanicalLogo.avif"
+    },
+    {
+      "name": "Sense Engineering",
+      "link": "https://senseengineering.com/",
+      "logoFileName": "SenseEngineeringLogo.avif"
+    },
+    {
+      "name": "Knappet Projects Inc.",
+      "link": "https://knappett.com/",
+      "logoFileName": "KnappetProjectsIncLogo.avif"
+    },
+    {
+      "name": "CoreyLapradeFinancialLtd.",
+      "link": "",
+      "logoFileName": "CoreyLapradeFinancialLtdLogo.avif"
+    },
+    {
+      "name": "Ally and Dennis Guevin",
+      "link": "https://allyanddennis.com/",
+      "logoFileName": "AllyAndDennisGuevinLogo.avif"
+    },
+    {
+      "name": "Frontera Homes",
+      "link": "https://fronterahomes.ca/",
+      "logoFileName": "FronteraHomesLogo.avif"
+    }
+  ],
+  "creator": [
+    {
+      "name": "Bay Ridge Electric",
+      "link": "",
+      "logoFileName": "BayRidgeElectricLogo.avif"
+    },
+    {
+      "name": "Little Owl Learning Center",
+      "link": "https://www.littleowllearningcentre.ca/",
+      "logoFileName": "LittleOwlLearningCenterLogo.avif"
+    },
+    {
+      "name": "Schaffer & Sons Ltd",
+      "link": "https://shafferandsonslawnandgarden.ca/",
+      "logoFileName": "SchafferAndSonsLtdLogo.avif"
+    },
+    {
+      "name": "Canadian Opinion Research Ltd.",
+      "link": null,
+      "logoFileName": "CanadianOpinionResearchLtdLogo.avif"
+    },
+    {
+      "name": "Stevenson Luchies & Leigh",
+      "link": "https://sll.ca/",
+      "logoFileName": "StevensonLuchiesAndLeghLogo.avif"
+    },
+    {
+      "name": "Focal Engineering",
+      "link": "https://focaleng.com/",
+      "logoFileName": "FocalEngineeringLogo.avif"
+    },
+    {
+      "name": "Coulson Aviation",
+      "link": "https://www.coulsonaviationusa.com/",
+      "logoFileName": "CoulsonAviationLogo.avif"
+    },
+    {
+      "name": "Vancouver Island Child Youth and Family Counselling Services",
+      "link": "https://vicyfcs.com/",
+      "logoFileName": "VancouverIslandChildYouthAndFamilyCounsellingServicesLogo.avif"
+    },
+    {
+      "name": "Evoke Buildings",
+      "link": "https://www.evokebuildings.com/",
+      "logoFileName": "EvokeBuildingsLogo.avif"
+    }
+  ]
+}
