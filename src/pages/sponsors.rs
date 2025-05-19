@@ -51,20 +51,20 @@ const SPONSOR_LOGOS: [Asset; 8] = [
 
 #[component]
 #[allow(non_snake_case)]
-fn EngineerSponsorComponent(name: String, description: String, image: String, link: Option<String>) -> Element {
+fn EngineerSponsorComponent(sponsor: EngineerSponsor) -> Element {
   rsx! {
     div {
       class: "EngineerSponsor",
 
-      match link {
-        Some(link) => rsx! { a { href: link, target: "_blank", rel: "noreferer", img { src: image} } },
-        None       => rsx! { img { src: image} }
+      match sponsor.link {
+        Some(link) => rsx! { a { href: link, target: "_blank", rel: "noreferer", img { src: sponsor.logo_file_name } } },
+        None       => rsx! { img { src: sponsor.logo_file_name } }
       }
 
       div {
         class: "EngineerSponsorDescription",
-        h3 { "{name}" },
-        p { "{description}" }
+        h3 { "{sponsor.name}" },
+        p { "{sponsor.description}" }
       }
     }
   }
@@ -119,12 +119,7 @@ pub fn SponsorsPage() -> Element {
           class: "EngineerSponsors",
 
           for sponsor in sponsors.engineer {
-            EngineerSponsorComponent {
-              name: sponsor.name,
-              description: sponsor.description,
-              image: sponsor.logo_file_name,
-              link: sponsor.link,
-            }
+            EngineerSponsorComponent { sponsor }
           }
         }
       }
